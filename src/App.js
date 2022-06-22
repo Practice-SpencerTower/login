@@ -11,8 +11,8 @@ function App() {
     const storedLoginInfo = localStorage.getItem('isLoggedIn');
 
     if (storedLoginInfo === 'true') setIsLoggedIn(true);
-
-  }, []);
+    
+  }, []); // run only when app starts
 
 
   const loginHandler = (email, password) => {
@@ -23,6 +23,7 @@ function App() {
   };
 
   const logoutHandler = () => {
+    localStorage.removeItem('isLoggedIn');
     setIsLoggedIn(false);
   };
 
